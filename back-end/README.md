@@ -50,18 +50,18 @@ Response:
         }
     }
 }
-'''
+```
 
 ##### PUT & POST data
 
 Request:
-'''json
+```json
 {
     "first name": "Rory",
     "last name": "Houlihan",
     "email": "me@myemail.com"
 }
-'''
+```
 
 Response: Same as GET
 
@@ -69,19 +69,19 @@ Response: Same as GET
 
 Request: None
 Response:
-'''josn
+```josn
 {
     "status": "ok",
     "message": "resource deleted"
 }
-'''
+```
 
 #### Resource Collection
 
 ##### GET data
 
 Response:
-'''json
+```json
 {
     "status": "ok",
         "data": [
@@ -109,7 +109,7 @@ Response:
         ...
         ]
 }
-'''
+```
 
 ---
 
@@ -133,7 +133,7 @@ Response:
 ##### GET data
 
 Response
-'''json
+```json
 {
     "status": "ok",
     "data": {
@@ -160,17 +160,17 @@ Response
         }
     }
 }
-'''
+```
 
 ##### PUT & POST data
 
 Request:
-'''json
+```json
 {
     "name": "My Company Secret Santa Group",
     "owner": "12345",
 }
-'''
+```
 
 Response: Same as GET
 
@@ -178,12 +178,12 @@ Response: Same as GET
 
 Request: None
 Response:
-'''josn
+```josn
 {
     "status": "ok",
     "message": "resource deleted"
 }
-'''
+```
 
 #### Resource Collection
 
