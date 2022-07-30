@@ -24,9 +24,6 @@ Secret Santa Picker backend api.
 
 ##### GET data
 
-Respoonse:
-'''json
-=======
 Response:
 ```json
 {
