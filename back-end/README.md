@@ -30,10 +30,10 @@ Response:
     "status": "ok",
     "data": {
         "link": {
-            "value": "https://www.secret-santa-picker/api/v1/users/12345",
+            "value": "https://www.secret-santa-picker/api/v1/users/12345"
         },
         "id": {
-            "value": "12345",
+            "value": "12345"
         },
         "name": {
             "first": "Rory",
@@ -69,7 +69,7 @@ Response: Same as GET
 
 Request: None
 Response:
-```josn
+```json
 {
     "status": "ok",
     "message": "resource deleted"
@@ -87,10 +87,10 @@ Response:
         "data": [
                 {
                     "link": {
-                        "value": "https://www.secret-santa-picker/api/v1/users/12345",
+                        "value": "https://www.secret-santa-picker/api/v1/users/12345"
                     },
                     "id": {
-                        "value": "12345",
+                        "value": "12345"
                     },
                     "name": {
                         "first": "Rory",
@@ -139,9 +139,9 @@ Response
     "data": {
         "link": {
             "value": "https://www.secret-santa-picker.com/api/v1/groups/12345"
-        }
+        },
         "id": {
-            "value": "12345",
+            "value": "12345"
         },
         "name": {
             "value": "Houlihan Family Secret Santa"
@@ -168,7 +168,7 @@ Request:
 ```json
 {
     "name": "My Company Secret Santa Group",
-    "owner": "12345",
+    "owner": "12345"
 }
 ```
 
@@ -178,7 +178,7 @@ Response: Same as GET
 
 Request: None
 Response:
-```josn
+```json
 {
     "status": "ok",
     "message": "resource deleted"
@@ -190,15 +190,16 @@ Response:
 ##### GET data
 
 Response:
+```json
 {
     "status": "ok",
     "data": [
        {
             "link": {
                 "value": "https://www.secret-santa-picker.com/api/v1/groups/12345"
-            }
+            },
             "id": {
-                "value": "12345",
+                "value": "12345"
             },
             "name": {
                 "value": "Houlihan Family Secret Santa"
@@ -219,7 +220,7 @@ Response:
         ...
     ]
 }
-
+```
 
 ## Users groups
 
@@ -231,10 +232,10 @@ Response:
 ### data
 
 #### Resource Collection
-
+```json
 {
     "status": "ok",
-    "data" {
+    data: {
         "user": {
             "value": "12345",
             "link": "https://www.secret-santa-picker.com/api/v1/user/12345"
@@ -248,7 +249,7 @@ Response:
         ]
     }
 }
-
+```
 
 ## Groups Users
 
@@ -258,5 +259,4 @@ Response:
 
 ##
 /groups/<id>/pairing/<year>
-
 

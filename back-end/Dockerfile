@@ -5,8 +5,6 @@ RUN python -m pip install --upgrade pip \
     && adduser -D santa
 USER santa
 
-EXPOSE 5000
-
 WORKDIR /secret-santa
 
 COPY requirements.txt .
