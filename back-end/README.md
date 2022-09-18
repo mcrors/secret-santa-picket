@@ -235,7 +235,7 @@ Response:
 ```json
 {
     "status": "ok",
-    data: {
+    "data": {
         "user": {
             "value": "12345",
             "link": "https://www.secret-santa-picker.com/api/v1/user/12345"
