@@ -1,3 +1,4 @@
+from typing import Any
 from tornado.web import RequestHandler
 
 class SecretSantaPickerHandler(RequestHandler):

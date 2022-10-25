@@ -2,29 +2,26 @@ import asyncio
 
 import tornado.web
 
+from app_config import AppConfig
+from repositories import bootstrap_repository
 from routes_handlers.user_handler import UserHandler
 
 
-class MainHandler(tornado.web.RequestHandler):
-    """The main handler"""
-    def get(self):
-        self.write("Hello, world")
-
-
-def make_app():
+def make_app() -> tornado.web.Application:
     return tornado.web.Application([
-        (r"/", MainHandler),
         (r"/api/v(?P<version>[0-9])/user", UserHandler),
         (r"/api/v(?P<version>[0-9])/user/(?P<user_id>[0-9]+)", UserHandler)
     ], debug=True)
 
 
-async def main():
+async def main(config: AppConfig) -> None:
+    bootstrap_repository(config)
     app = make_app()
     app.listen(8080)
     await asyncio.Event().wait()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    config = AppConfig()
+    asyncio.run(main(config))
 

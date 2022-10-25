@@ -1,41 +1,19 @@
-from dataclasses import asdict
-from functools import wraps
-import json
-
 from tornado.web import RequestHandler
+from repositories.user_repository import UserRepository
 
-from db_handlers.user_table import UserTable
-from errors.secret_santa_exceptions import InvalidVersionError
-
-
-VALID_VERSIONS = ["1"]
-
-
-def is_valid_version(version: str):
-    return version in VALID_VERSIONS
-
-
-def check_version(func: callable):
-
-    @wraps(func)
-    def wrapper(*pargs, **kwargs):
-        if "version" in kwargs.keys():
-            if is_valid_version(kwargs["version"]):
-                func(*pargs, **kwargs)
-            else:
-                raise InvalidVersionError(404)
-    return wrapper
+from utils import check_version
 
 
 class UserHandler(RequestHandler):
 
     @check_version
     def get(self, version, user_id=None):
-        print(f"user id is{user_id}")
-        users = UserTable().select(user_id)
-        if users:
-            response = json.dumps([asdict(user) for user in users])
+        user_repository = UserRepository()
+        if user_id:
+            user = user_repository.get(user_id)
+            self.write(user)
         else:
-            response = json.dumps({"message": "user not found"})
-        self.write(response)
+            users = [user.serialize() for user in user_repository.list()]
+            response = {'users': users}
+            self.write(response)
 

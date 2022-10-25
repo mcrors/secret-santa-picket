@@ -7,3 +7,7 @@ class SecretSantaPickerError(tornado.web.HTTPError):
 class InvalidVersionError(SecretSantaPickerError):
     pass
 
+
+class DatabaseNotConfiguredError():
+    pass
+
