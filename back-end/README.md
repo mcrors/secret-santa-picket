@@ -52,7 +52,7 @@ Response:
 }
 ```
 
-##### PUT & POST data
+##### PUT data
 
 Request:
 ```json

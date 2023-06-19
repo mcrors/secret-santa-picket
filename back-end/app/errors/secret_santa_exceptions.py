@@ -11,3 +11,11 @@ class InvalidVersionError(SecretSantaPickerError):
 class DatabaseNotConfiguredError():
     pass
 
+
+class SecretSantaRepositoryError(SecretSantaPickerError):
+    pass
+
+
+class UserNotFoundError(SecretSantaRepositoryError):
+    pass
+

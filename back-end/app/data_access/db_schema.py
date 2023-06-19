@@ -15,6 +15,7 @@ users = Table(
     "users",
     metadata,
     Column("id", Integer, primary_key=True),
+    Column("public_id", String, unique=True, nullable=False),
     Column("first_name", String, nullable=False),
     Column("last_name", String, nullable=False),
     Column("email", String, unique=True, nullable=False),
